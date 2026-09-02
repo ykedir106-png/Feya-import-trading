@@ -3,8 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>FEYA IMPORT & TRADING</title>
+
 <meta name="description" content="FEYA Import & Trading - Quality, Trust & Value. Cars and construction materials imported from China to Ethiopia.">
+
+<!-- PWA -->
+<meta name="theme-color" content="#c99a35">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="FEYA Import">
+
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" type="image/png" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
 
 <style>
 :root{
@@ -19,240 +32,968 @@
   --shadow:0 8px 25px rgba(0,0,0,.13);
   --radius:15px;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0
+}
+
+html{
+  scroll-behavior:smooth
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
   background:#fff;
-  line-height:1.5;
+  line-height:1.5
 }
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block}
-.container{width:min(1180px,92%);margin:auto}
+
+a{
+  text-decoration:none;
+  color:inherit
+}
+
+img{
+  max-width:100%;
+  display:block
+}
+
+.container{
+  width:min(1180px,92%);
+  margin:auto
+}
 
 /* TOP BAR */
 .topbar{
-  background:#111;color:#fff;height:45px;
-  display:flex;align-items:center;font-size:13px;
+  background:#111;
+  color:#fff;
+  height:45px;
+  display:flex;
+  align-items:center;
+  font-size:13px
 }
+
 .topbar .container{
-  display:flex;justify-content:space-between;align-items:center;gap:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:15px
 }
-.top-left,.top-right{display:flex;align-items:center;gap:25px}
-.top-item{display:flex;align-items:center;gap:7px;white-space:nowrap}
-.top-item .icon{font-size:16px}
-.langs{display:flex;gap:22px;align-items:center}
-.langs a{transition:.2s}
-.langs a:hover{color:var(--gold2)}
+
+.top-left,
+.top-right{
+  display:flex;
+  align-items:center;
+  gap:25px
+}
+
+.top-item{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  white-space:nowrap
+}
+
+.top-item .icon{
+  font-size:16px
+}
+
+.langs{
+  display:flex;
+  gap:22px;
+  align-items:center
+}
+
+.langs a{
+  transition:.2s
+}
+
+.langs a:hover{
+  color:var(--gold2)
+}
 
 /* HEADER */
 .header{
-  height:148px;background:#fff;display:flex;align-items:center;
-  border-bottom:1px solid #eee;
+  height:148px;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid #eee
 }
+
 .header .container{
-  display:flex;align-items:center;justify-content:space-between;
+  display:flex;
+  align-items:center;
+  justify-content:space-between
 }
-.logo-wrap{display:flex;align-items:center;gap:13px}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+  gap:13px
+}
+
 .logo-mark{
-  width:112px;height:100px;position:relative;display:flex;align-items:center;justify-content:center;
+  width:112px;
+  height:100px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center
 }
+
 .logo-mark .circle{
-  width:82px;height:82px;border:5px solid var(--gold);border-radius:50%;
-  position:absolute;top:5px;left:7px;border-right-color:transparent;
+  width:82px;
+  height:82px;
+  border:5px solid var(--gold);
+  border-radius:50%;
+  position:absolute;
+  top:5px;
+  left:7px;
+  border-right-color:transparent
 }
-.logo-mark .build{font-size:53px;position:relative;z-index:2;filter:grayscale(1)}
-.logo-mark .car{font-size:43px;position:absolute;bottom:1px;left:14px;z-index:3}
-.brand h1{font-size:47px;line-height:.95;letter-spacing:-1.5px}
-.brand h2{font-size:20px;color:var(--gold);letter-spacing:.4px}
-.brand p{font-size:13px;letter-spacing:1.5px;font-weight:bold;margin-top:4px}
-.nav{display:flex;align-items:center;gap:34px;font-size:15px;font-weight:600}
-.nav a{padding:13px 0;position:relative}
-.nav a.active:after,.nav a:hover:after{
-  content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--gold);
+
+.logo-mark .build{
+  font-size:53px;
+  position:relative;
+  z-index:2;
+  filter:grayscale(1)
 }
-.dropdown{position:relative}
+
+.logo-mark .car{
+  font-size:43px;
+  position:absolute;
+  bottom:1px;
+  left:14px;
+  z-index:3
+}
+
+.brand h1{
+  font-size:47px;
+  line-height:.95;
+  letter-spacing:-1.5px
+}
+
+.brand h2{
+  font-size:20px;
+  color:var(--gold);
+  letter-spacing:.4px
+}
+
+.brand p{
+  font-size:13px;
+  letter-spacing:1.5px;
+  font-weight:bold;
+  margin-top:4px
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  gap:34px;
+  font-size:15px;
+  font-weight:600
+}
+
+.nav a{
+  padding:13px 0;
+  position:relative
+}
+
+.nav a.active:after,
+.nav a:hover:after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  height:3px;
+  background:var(--gold)
+}
+
+.dropdown{
+  position:relative
+}
+
 .dropdown-menu{
-  position:absolute;top:43px;left:-18px;background:#fff;min-width:210px;
-  box-shadow:var(--shadow);border-radius:8px;padding:8px;display:none;z-index:20;
+  position:absolute;
+  top:43px;
+  left:-18px;
+  background:#fff;
+  min-width:210px;
+  box-shadow:var(--shadow);
+  border-radius:8px;
+  padding:8px;
+  display:none;
+  z-index:20
 }
-.dropdown:hover .dropdown-menu{display:block}
-.dropdown-menu a{display:block;padding:10px 13px}
-.dropdown-menu a:after{display:none!important}
-.menu-btn{display:none;background:none;border:0;font-size:29px}
+
+.dropdown:hover .dropdown-menu{
+  display:block
+}
+
+.dropdown-menu a{
+  display:block;
+  padding:10px 13px
+}
+
+.dropdown-menu a:after{
+  display:none!important
+}
+
+.menu-btn{
+  display:none;
+  background:none;
+  border:0;
+  font-size:29px;
+  cursor:pointer
+}
 
 /* HERO */
 .hero{
-  min-height:440px;position:relative;overflow:hidden;color:#fff;
+  min-height:440px;
+  position:relative;
+  overflow:hidden;
+  color:#fff;
   background:
-    linear-gradient(90deg,rgba(9,9,9,.98) 0%,rgba(9,9,9,.98) 39%,rgba(9,9,9,.45) 54%,rgba(9,9,9,.05) 72%),
-    url("https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=85") center/cover;
+    linear-gradient(
+      90deg,
+      rgba(9,9,9,.98) 0%,
+      rgba(9,9,9,.98) 39%,
+      rgba(9,9,9,.45) 54%,
+      rgba(9,9,9,.05) 72%
+    ),
+    url("https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&w=1800&q=85")
+    center/cover
 }
-.hero:after{
-  content:"";position:absolute;top:0;bottom:0;left:43%;
-  width:10px;background:var(--gold);transform:skew(-22deg);
-}
-.hero .container{min-height:440px;display:flex;align-items:center;position:relative;z-index:2}
-.hero-copy{width:49%;padding:15px 0 15px 10px}
-.hero-copy .big{font-size:63px;font-weight:800;line-height:.95;letter-spacing:-2px}
-.hero-copy .gold-title{font-size:29px;font-weight:800;color:var(--gold2);margin:7px 0 10px}
-.hero-copy .chinese{font-size:21px;font-weight:600;margin-bottom:3px}
-.hero-copy .amharic{font-size:17px;color:var(--gold2);font-weight:700}
-.hero-copy .tagline{font-size:15px;margin-top:13px}
-.btn{
-  display:inline-flex;align-items:center;gap:12px;
-  background:linear-gradient(90deg,var(--gold2),var(--gold));
-  color:#fff;font-weight:800;padding:11px 19px;border-radius:30px;
-  margin-top:23px;border:0;cursor:pointer;transition:.2s;
-}
-.btn:hover{transform:translateY(-2px);filter:brightness(1.06)}
 
-/* TRUST STRIP */
+.hero:after{
+  content:"";
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:43%;
+  width:10px;
+  background:var(--gold);
+  transform:skew(-22deg)
+}
+
+.hero .container{
+  min-height:440px;
+  display:flex;
+  align-items:center;
+  position:relative;
+  z-index:2
+}
+
+.hero-copy{
+  width:49%;
+  padding:15px 0 15px 10px
+}
+
+.hero-copy .big{
+  font-size:63px;
+  font-weight:800;
+  line-height:.95;
+  letter-spacing:-2px
+}
+
+.hero-copy .gold-title{
+  font-size:29px;
+  font-weight:800;
+  color:var(--gold2);
+  margin:7px 0 10px
+}
+
+.hero-copy .chinese{
+  font-size:21px;
+  font-weight:600;
+  margin-bottom:3px
+}
+
+.hero-copy .amharic{
+  font-size:17px;
+  color:var(--gold2);
+  font-weight:700
+}
+
+.hero-copy .tagline{
+  font-size:15px;
+  margin-top:13px
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  background:linear-gradient(90deg,var(--gold2),var(--gold));
+  color:#fff;
+  font-weight:800;
+  padding:11px 19px;
+  border-radius:30px;
+  margin-top:23px;
+  border:0;
+  cursor:pointer;
+  transition:.2s
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.06)
+}
+
+/* TRUST */
 .trust{
-  margin-top:-37px;position:relative;z-index:5;
+  margin-top:-37px;
+  position:relative;
+  z-index:5
 }
+
 .trust-box{
-  background:#fff;border-radius:16px;box-shadow:var(--shadow);
-  display:grid;grid-template-columns:repeat(4,1fr);padding:22px 18px;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:22px 18px
 }
+
 .trust-card{
-  display:flex;align-items:center;gap:14px;padding:0 18px;border-right:1px solid #ddd;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  padding:0 18px;
+  border-right:1px solid #ddd
 }
-.trust-card:last-child{border-right:0}
+
+.trust-card:last-child{
+  border-right:0
+}
+
 .round-icon{
-  width:58px;height:58px;min-width:58px;border-radius:50%;
-  background:#080808;color:var(--gold2);display:flex;align-items:center;
-  justify-content:center;font-size:27px;
+  width:58px;
+  height:58px;
+  min-width:58px;
+  border-radius:50%;
+  background:#080808;
+  color:var(--gold2);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:27px
 }
-.trust-card h4{font-size:13px;margin-bottom:4px}
-.trust-card p{font-size:12px;color:#444;line-height:1.4}
+
+.trust-card h4{
+  font-size:13px;
+  margin-bottom:4px
+}
+
+.trust-card p{
+  font-size:12px;
+  color:#444;
+  line-height:1.4
+}
 
 /* SECTION */
-.section{padding:30px 0}
-.section-title{text-align:center;font-size:27px;font-weight:800;margin-bottom:15px}
+.section{
+  padding:30px 0
+}
+
+.section-title{
+  text-align:center;
+  font-size:27px;
+  font-weight:800;
+  margin-bottom:15px
+}
+
 .section-title:after{
-  content:"";display:block;width:9px;height:9px;background:var(--gold);
-  transform:rotate(45deg);margin:8px auto 0;
+  content:"";
+  display:block;
+  width:9px;
+  height:9px;
+  background:var(--gold);
+  transform:rotate(45deg);
+  margin:8px auto 0
 }
 
 /* PRODUCTS */
-.products-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.products-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px
+}
+
 .product-card{
-  min-height:263px;border-radius:13px;overflow:hidden;color:#fff;position:relative;
-  padding:25px;background-size:cover;background-position:center;
+  min-height:263px;
+  border-radius:13px;
+  overflow:hidden;
+  color:#fff;
+  position:relative;
+  padding:25px;
+  background-size:cover;
+  background-position:center
 }
+
 .product-card:before{
-  content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.28));
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.88),
+    rgba(0,0,0,.28)
+  )
 }
-.product-card>*{position:relative;z-index:2}
+
+.product-card>*{
+  position:relative;
+  z-index:2
+}
+
 .cars{
-  background-image:url("https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1100&q=85");
+  background-image:url("https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=1100&q=85")
 }
+
 .construction{
-  background-image:url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85");
+  background-image:url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85")
 }
-.product-head{display:flex;align-items:center;gap:13px;margin-bottom:7px}
+
+.product-head{
+  display:flex;
+  align-items:center;
+  gap:13px;
+  margin-bottom:7px
+}
+
 .product-head .picon{
-  width:43px;height:43px;border-radius:50%;background:var(--gold);
-  display:flex;align-items:center;justify-content:center;font-size:22px;
+  width:43px;
+  height:43px;
+  border-radius:50%;
+  background:var(--gold);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px
 }
-.product-head h3{font-size:20px}
-.product-card ul{padding-left:18px;font-size:13px;line-height:1.65}
+
+.product-head h3{
+  font-size:20px
+}
+
+.product-card ul{
+  padding-left:18px;
+  font-size:13px;
+  line-height:1.65
+}
+
 .small-btn{
-  display:inline-block;margin-top:14px;border:1px solid #fff;border-radius:13px;
-  padding:6px 13px;font-size:11px;font-weight:bold;
+  display:inline-block;
+  margin-top:14px;
+  border:1px solid #fff;
+  border-radius:13px;
+  padding:6px 13px;
+  font-size:11px;
+  font-weight:bold
 }
 
 /* ABOUT */
-.about{padding:8px 0 30px}
-.about-grid{display:grid;grid-template-columns:34% 66%;gap:25px;align-items:center}
-.about-copy h2{font-size:25px;margin-bottom:12px}
+.about{
+  padding:8px 0 30px
+}
+
+.about-grid{
+  display:grid;
+  grid-template-columns:34% 66%;
+  gap:25px;
+  align-items:center
+}
+
+.about-copy h2{
+  font-size:25px;
+  margin-bottom:12px
+}
+
 .about-copy h2:after{
-  content:"";display:block;width:45px;height:3px;background:var(--gold);margin-top:7px
+  content:"";
+  display:block;
+  width:45px;
+  height:3px;
+  background:var(--gold);
+  margin-top:7px
 }
-.about-copy p{font-size:14px;color:#333}
-.about-copy .btn{color:#111;padding:8px 16px;margin-top:13px;font-size:12px}
+
+.about-copy p{
+  font-size:14px;
+  color:#333
+}
+
+.about-copy .btn{
+  color:#111;
+  padding:8px 16px;
+  margin-top:13px;
+  font-size:12px
+}
+
 .stats{
-  background:#151515;color:#fff;border-radius:13px;display:grid;
-  grid-template-columns:repeat(4,1fr);padding:30px 15px;
+  background:#151515;
+  color:#fff;
+  border-radius:13px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:30px 15px
 }
-.stat{padding:0 15px;text-align:center;border-right:1px solid #555}
-.stat:last-child{border:0}
-.stat .sicon{font-size:30px;color:var(--gold);margin-bottom:9px}
-.stat strong{display:block;font-size:21px;margin-bottom:3px}
-.stat span{font-size:12px}
 
-/* EXTRA SECTIONS */
-.services{background:#fafafa;padding:42px 0}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.service{
-  background:#fff;padding:25px;border-radius:13px;box-shadow:0 3px 15px rgba(0,0,0,.07);
+.stat{
+  padding:0 15px;
   text-align:center;
+  border-right:1px solid #555
 }
-.service .sicon{font-size:34px;color:var(--gold);margin-bottom:10px}
-.service h3{font-size:17px;margin-bottom:5px}
-.service p{font-size:13px;color:#666}
 
-.contact{padding:45px 0}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.contact-box{padding:28px;border-radius:13px;background:#111;color:#fff}
-.contact-box h3{color:var(--gold2);margin-bottom:12px}
-.contact-line{margin:9px 0;font-size:14px}
+.stat:last-child{
+  border:0
+}
+
+.stat .sicon{
+  font-size:30px;
+  color:var(--gold);
+  margin-bottom:9px
+}
+
+.stat strong{
+  display:block;
+  font-size:21px;
+  margin-bottom:3px
+}
+
+.stat span{
+  font-size:12px
+}
+
+/* SERVICES */
+.services{
+  background:#fafafa;
+  padding:42px 0
+}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px
+}
+
+.service{
+  background:#fff;
+  padding:25px;
+  border-radius:13px;
+  box-shadow:0 3px 15px rgba(0,0,0,.07);
+  text-align:center
+}
+
+.service .sicon{
+  font-size:34px;
+  color:var(--gold);
+  margin-bottom:10px
+}
+
+.service h3{
+  font-size:17px;
+  margin-bottom:5px
+}
+
+.service p{
+  font-size:13px;
+  color:#666
+}
+
+/* CONTACT */
+.contact{
+  padding:45px 0
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px
+}
+
+.contact-box{
+  padding:28px;
+  border-radius:13px;
+  background:#111;
+  color:#fff
+}
+
+.contact-box h3{
+  color:var(--gold2);
+  margin-bottom:12px
+}
+
+.contact-line{
+  margin:9px 0;
+  font-size:14px
+}
 
 /* FOOTER */
-footer{background:#111;color:#fff;margin-top:10px}
-.footer-main{padding:30px 0}
-.footer-grid{
-  display:grid;grid-template-columns:1.25fr 1fr 1fr 1.1fr;gap:25px
+footer{
+  background:#111;
+  color:#fff;
+  margin-top:10px
 }
-.footer-col{padding-right:22px;border-right:1px solid #555}
-.footer-col:last-child{border:0}
-.footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.footer-brand .mini-logo{font-size:45px}
-.footer-brand h3{font-size:31px}
-.footer-brand p{color:var(--gold);font-size:13px;font-weight:bold}
-.footer-col h4{font-size:14px;margin-bottom:12px}
-.footer-col ul{list-style:none}
-.footer-col li{font-size:13px;margin:7px 0;color:#ddd}
-.footer-about{font-size:12px;color:#ddd}
+
+.footer-main{
+  padding:30px 0
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.25fr 1fr 1fr 1.1fr;
+  gap:25px
+}
+
+.footer-col{
+  padding-right:22px;
+  border-right:1px solid #555
+}
+
+.footer-col:last-child{
+  border:0
+}
+
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin-bottom:10px
+}
+
+.footer-brand .mini-logo{
+  font-size:45px
+}
+
+.footer-brand h3{
+  font-size:31px
+}
+
+.footer-brand p{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:bold
+}
+
+.footer-col h4{
+  font-size:14px;
+  margin-bottom:12px
+}
+
+.footer-col ul{
+  list-style:none
+}
+
+.footer-col li{
+  font-size:13px;
+  margin:7px 0;
+  color:#ddd
+}
+
+.footer-about{
+  font-size:12px;
+  color:#ddd
+}
+
 .footer-bottom{
-  border-top:1px solid #444;padding:11px 0;font-size:11px;
-  display:flex;justify-content:space-between;gap:10px;
+  border-top:1px solid #444;
+  padding:11px 0;
+  font-size:11px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px
+}
+
+/* PWA INSTALL BUTTON */
+#installBtn{
+  display:none;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  z-index:9999;
+  box-shadow:0 8px 25px rgba(0,0,0,.3);
 }
 
 /* MOBILE */
 @media(max-width:900px){
-  .top-left{gap:10px}.top-right{display:none}
-  .header{height:100px}
-  .logo-mark{width:75px;height:75px}.logo-mark .build{font-size:37px}.logo-mark .car{font-size:29px}.logo-mark .circle{width:60px;height:60px}
-  .brand h1{font-size:31px}.brand h2{font-size:14px}.brand p{font-size:9px}
-  .nav{display:none;position:absolute;top:145px;left:4%;right:4%;background:#fff;box-shadow:var(--shadow);padding:12px;z-index:50;flex-direction:column;gap:0;align-items:stretch}
-  .nav.open{display:flex}
-  .nav a{padding:12px}
-  .dropdown-menu{position:static;box-shadow:none;display:block;padding:0 0 0 12px}
-  .menu-btn{display:block}
-  .hero{min-height:500px;background-position:center}
-  .hero:after{left:48%}
-  .hero .container{min-height:500px}.hero-copy{width:65%}.hero-copy .big{font-size:48px}.hero-copy .gold-title{font-size:22px}
-  .trust-box{grid-template-columns:1fr 1fr}.trust-card{padding:13px;border-bottom:1px solid #ddd}.trust-card:nth-child(2){border-right:0}
-  .products-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
-  .about-grid{gap:15px}.stats{grid-template-columns:1fr 1fr;gap:20px}.stat:nth-child(2){border:0}.stat{padding:10px}
-  .services-grid{grid-template-columns:1fr}
-  .footer-grid{grid-template-columns:1fr 1fr}.footer-col:nth-child(2){border:0}
+
+  .top-left{
+    gap:10px
+  }
+
+  .top-right{
+    display:none
+  }
+
+  .header{
+    height:100px
+  }
+
+  .logo-mark{
+    width:75px;
+    height:75px
+  }
+
+  .logo-mark .build{
+    font-size:37px
+  }
+
+  .logo-mark .car{
+    font-size:29px
+  }
+
+  .logo-mark .circle{
+    width:60px;
+    height:60px
+  }
+
+  .brand h1{
+    font-size:31px
+  }
+
+  .brand h2{
+    font-size:14px
+  }
+
+  .brand p{
+    font-size:9px
+  }
+
+  .nav{
+    display:none;
+    position:absolute;
+    top:145px;
+    left:4%;
+    right:4%;
+    background:#fff;
+    box-shadow:var(--shadow);
+    padding:12px;
+    z-index:50;
+    flex-direction:column;
+    gap:0;
+    align-items:stretch
+  }
+
+  .nav.open{
+    display:flex
+  }
+
+  .nav a{
+    padding:12px
+  }
+
+  .dropdown-menu{
+    position:static;
+    box-shadow:none;
+    display:block;
+    padding:0 0 0 12px
+  }
+
+  .menu-btn{
+    display:block
+  }
+
+  .hero{
+    min-height:500px;
+    background-position:center
+  }
+
+  .hero:after{
+    left:48%
+  }
+
+  .hero .container{
+    min-height:500px
+  }
+
+  .hero-copy{
+    width:65%
+  }
+
+  .hero-copy .big{
+    font-size:48px
+  }
+
+  .hero-copy .gold-title{
+    font-size:22px
+  }
+
+  .trust-box{
+    grid-template-columns:1fr 1fr
+  }
+
+  .trust-card{
+    padding:13px;
+    border-bottom:1px solid #ddd
+  }
+
+  .trust-card:nth-child(2){
+    border-right:0
+  }
+
+  .products-grid,
+  .about-grid,
+  .contact-grid{
+    grid-template-columns:1fr
+  }
+
+  .about-grid{
+    gap:15px
+  }
+
+  .stats{
+    grid-template-columns:1fr 1fr;
+    gap:20px
+  }
+
+  .stat:nth-child(2){
+    border:0
+  }
+
+  .stat{
+    padding:10px
+  }
+
+  .services-grid{
+    grid-template-columns:1fr
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr
+  }
+
+  .footer-col:nth-child(2){
+    border:0
+  }
 }
+
 @media(max-width:560px){
-  .topbar{height:auto;padding:8px 0}.top-left{font-size:11px;gap:10px}.top-left .top-item:nth-child(2){display:none}
-  .header{height:90px}.brand h1{font-size:25px}.brand h2{font-size:12px}.brand p{font-size:8px}
-  .logo-mark{width:62px}.logo-mark .build{font-size:30px}.logo-mark .car{font-size:23px}
-  .hero:after{display:none}.hero .container{min-height:475px}.hero-copy{width:100%;padding:30px 5px}
-  .hero-copy .big{font-size:45px}.hero-copy .gold-title{font-size:21px}.hero-copy .chinese{font-size:17px}
-  .trust{margin-top:-20px}.trust-box{grid-template-columns:1fr;padding:10px}
-  .trust-card{border-right:0!important;padding:13px;border-bottom:1px solid #ddd}
-  .trust-card:last-child{border-bottom:0}
-  .section{padding:24px 0}.section-title{font-size:24px}
-  .product-card{min-height:280px}.footer-grid{grid-template-columns:1fr}.footer-col{border-right:0;border-bottom:1px solid #444;padding-bottom:18px}
-  .footer-bottom{flex-direction:column;text-align:center}
+
+  .topbar{
+    height:auto;
+    padding:8px 0
+  }
+
+  .top-left{
+    font-size:11px;
+    gap:10px
+  }
+
+  .top-left .top-item:nth-child(2){
+    display:none
+  }
+
+  .header{
+    height:90px
+  }
+
+  .brand h1{
+    font-size:25px
+  }
+
+  .brand h2{
+    font-size:12px
+  }
+
+  .brand p{
+    font-size:8px
+  }
+
+  .logo-mark{
+    width:62px
+  }
+
+  .logo-mark .build{
+    font-size:30px
+  }
+
+  .logo-mark .car{
+    font-size:23px
+  }
+
+  .hero:after{
+    display:none
+  }
+
+  .hero .container{
+    min-height:475px
+  }
+
+  .hero-copy{
+    width:100%;
+    padding:30px 5px
+  }
+
+  .hero-copy .big{
+    font-size:45px
+  }
+
+  .hero-copy .gold-title{
+    font-size:21px
+  }
+
+  .hero-copy .chinese{
+    font-size:17px
+  }
+
+  .trust{
+    margin-top:-20px
+  }
+
+  .trust-box{
+    grid-template-columns:1fr;
+    padding:10px
+  }
+
+  .trust-card{
+    border-right:0!important;
+    padding:13px;
+    border-bottom:1px solid #ddd
+  }
+
+  .trust-card:last-child{
+    border-bottom:0
+  }
+
+  .section{
+    padding:24px 0
+  }
+
+  .section-title{
+    font-size:24px
+  }
+
+  .product-card{
+    min-height:280px
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr
+  }
+
+  .footer-col{
+    border-right:0;
+    border-bottom:1px solid #444;
+    padding-bottom:18px
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center
+  }
+
+  #installBtn{
+    left:20px;
+    right:20px;
+    justify-content:center
+  }
 }
 </style>
 </head>
@@ -262,120 +1003,264 @@ footer{background:#111;color:#fff;margin-top:10px}
 <!-- TOP BAR -->
 <div class="topbar">
   <div class="container">
+
     <div class="top-left">
-      <div class="top-item"><span class="icon">📞</span>0915044161</div>
-      <div class="top-item"><span class="icon">◉</span> WhatsApp</div>
-      <div class="top-item"><span class="icon">📍</span> Finfinne, Ethiopia 🇪🇹</div>
+
+      <div class="top-item">
+        <span class="icon">📞</span>
+        0915044161
+      </div>
+
+      <div class="top-item">
+        <span class="icon">◉</span>
+        WhatsApp
+      </div>
+
+      <div class="top-item">
+        <span class="icon">📍</span>
+        Finfinne, Ethiopia 🇪🇹
+      </div>
+
     </div>
+
     <div class="top-right">
+
       <div class="langs">
         <a href="#">中文 (Chinese)</a>
         <a href="#">Afaan Oromoo</a>
         <a href="#">አማርኛ (Amharic)</a>
         <a href="#">English</a>
       </div>
+
     </div>
+
   </div>
 </div>
 
+
 <!-- HEADER -->
 <header class="header">
+
   <div class="container">
+
     <a class="logo-wrap" href="#home">
+
       <div class="logo-mark">
         <div class="circle"></div>
         <div class="build">🏢</div>
         <div class="car">🚙</div>
       </div>
+
       <div class="brand">
         <h1>FEYA</h1>
         <h2>IMPORT &amp; TRADING</h2>
         <p>QUALITY • TRUST • VALUE</p>
       </div>
+
     </a>
 
-    <button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+      aria-label="Open menu">
+      ☰
+    </button>
 
     <nav class="nav" id="nav">
+
       <a class="active" href="#home">Home</a>
+
       <a href="#about">About Us</a>
+
       <div class="dropdown">
+
         <a href="#products">Products⌄</a>
+
         <div class="dropdown-menu">
           <a href="#cars">Cars</a>
           <a href="#construction">Construction Materials</a>
           <a href="#services">Services</a>
         </div>
+
       </div>
+
       <a href="#services">Services</a>
+
       <a href="#gallery">Gallery</a>
+
       <a href="#contact">Contact Us</a>
+
     </nav>
+
   </div>
+
 </header>
+
 
 <!-- HERO -->
 <section class="hero" id="home">
+
   <div class="container">
+
     <div class="hero-copy">
+
       <div class="big">FEYA</div>
-      <div class="gold-title">IMPORT &amp; TRADING</div>
-      <div class="chinese">飞雅进出口贸易有限公司</div>
-      <div class="amharic">ፌያ ኢምፖርት እና ትሬዲንግ</div>
-      <div class="amharic">FEYA IMPORTFI TRADINGII</div>
-      <div class="tagline">Your Trusted Partner for Quality Imports</div>
-      <a class="btn" href="#contact">GET IN TOUCH <span>→</span></a>
+
+      <div class="gold-title">
+        IMPORT &amp; TRADING
+      </div>
+
+      <div class="chinese">
+        飞雅进出口贸易有限公司
+      </div>
+
+      <div class="amharic">
+        ፌያ ኢምፖርት እና ትሬዲንግ
+      </div>
+
+      <div class="amharic">
+        FEYA IMPORTFI TRADINGII
+      </div>
+
+      <div class="tagline">
+        Your Trusted Partner for Quality Imports
+      </div>
+
+      <a class="btn" href="#contact">
+        GET IN TOUCH <span>→</span>
+      </a>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- TRUST -->
 <section class="trust">
+
   <div class="container">
+
     <div class="trust-box">
+
       <div class="trust-card">
+
         <div class="round-icon">🏅</div>
-        <div><h4>QUALITY PRODUCTS</h4><p>We import high quality products from trusted suppliers.</p></div>
+
+        <div>
+          <h4>QUALITY PRODUCTS</h4>
+          <p>
+            We import high quality products from trusted suppliers.
+          </p>
+        </div>
+
       </div>
+
+
       <div class="trust-card">
+
         <div class="round-icon">🤝</div>
-        <div><h4>TRUST &amp; RELIABILITY</h4><p>Honest, transparent and customer satisfaction is our priority.</p></div>
+
+        <div>
+          <h4>TRUST &amp; RELIABILITY</h4>
+          <p>
+            Honest, transparent and customer satisfaction is our priority.
+          </p>
+        </div>
+
       </div>
+
+
       <div class="trust-card">
+
         <div class="round-icon">🚚</div>
-        <div><h4>FAST DELIVERY</h4><p>Safe and timely delivery from China to Ethiopia.</p></div>
+
+        <div>
+          <h4>FAST DELIVERY</h4>
+          <p>
+            Safe and timely delivery from China to Ethiopia.
+          </p>
+        </div>
+
       </div>
+
+
       <div class="trust-card">
+
         <div class="round-icon">🎧</div>
-        <div><h4>CUSTOMER SUPPORT</h4><p>We are always ready to serve you better.</p></div>
+
+        <div>
+          <h4>CUSTOMER SUPPORT</h4>
+          <p>
+            We are always ready to serve you better.
+          </p>
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- PRODUCTS -->
 <section class="section" id="products">
+
   <div class="container">
-    <h2 class="section-title">OUR PRODUCTS</h2>
+
+    <h2 class="section-title">
+      OUR PRODUCTS
+    </h2>
+
     <div class="products-grid">
 
+
       <article class="product-card cars" id="cars">
+
         <div class="product-head">
-          <div class="picon">🚘</div><h3>CARS</h3>
+
+          <div class="picon">
+            🚘
+          </div>
+
+          <h3>
+            CARS
+          </h3>
+
         </div>
+
         <ul>
           <li>New &amp; Used Cars</li>
           <li>Brand New Vehicles</li>
           <li>Spare Parts</li>
           <li>Car Accessories</li>
         </ul>
-        <a class="small-btn" href="#contact">VIEW MORE</a>
+
+        <a class="small-btn" href="#contact">
+          VIEW MORE
+        </a>
+
       </article>
 
+
       <article class="product-card construction" id="construction">
+
         <div class="product-head">
-          <div class="picon">🏗️</div><h3>CONSTRUCTION<br>MATERIALS</h3>
+
+          <div class="picon">
+            🏗️
+          </div>
+
+          <h3>
+            CONSTRUCTION<br>
+            MATERIALS
+          </h3>
+
         </div>
+
         <ul>
           <li>Cement</li>
           <li>Steel &amp; Iron</li>
@@ -384,99 +1269,296 @@ footer{background:#111;color:#fff;margin-top:10px}
           <li>Paints &amp; Tools</li>
           <li>And More...</li>
         </ul>
-        <a class="small-btn" href="#contact">VIEW MORE</a>
+
+        <a class="small-btn" href="#contact">
+          VIEW MORE
+        </a>
+
       </article>
 
     </div>
+
   </div>
+
 </section>
+
 
 <!-- ABOUT -->
 <section class="about" id="about">
+
   <div class="container">
+
     <div class="about-grid">
+
       <div class="about-copy">
-        <h2>ABOUT US</h2>
+
+        <h2>
+          ABOUT US
+        </h2>
+
         <p>
           FEYA IMPORT &amp; TRADING is a registered import and trading company based in
           Finfinne, Ethiopia. We specialize in importing high quality cars and construction
           materials from China and other countries to meet the growing demands of our customers.
         </p>
-        <a class="btn" href="#contact">READ MORE</a>
+
+        <a class="btn" href="#contact">
+          READ MORE
+        </a>
+
       </div>
 
+
       <div class="stats">
-        <div class="stat"><div class="sicon">🏢</div><strong>100%</strong><span>Trusted Company</span></div>
-        <div class="stat"><div class="sicon">🏅</div><strong>High Quality</strong><span>Products</span></div>
-        <div class="stat"><div class="sicon">👥</div><strong>Customer</strong><span>Satisfaction</span></div>
-        <div class="stat"><div class="sicon">🌍</div><strong>Import From</strong><span>China</span></div>
+
+        <div class="stat">
+          <div class="sicon">🏢</div>
+          <strong>100%</strong>
+          <span>Trusted Company</span>
+        </div>
+
+        <div class="stat">
+          <div class="sicon">🏅</div>
+          <strong>High Quality</strong>
+          <span>Products</span>
+        </div>
+
+        <div class="stat">
+          <div class="sicon">👥</div>
+          <strong>Customer</strong>
+          <span>Satisfaction</span>
+        </div>
+
+        <div class="stat">
+          <div class="sicon">🌍</div>
+          <strong>Import From</strong>
+          <span>China</span>
+        </div>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- SERVICES -->
 <section class="services" id="services">
+
   <div class="container">
-    <h2 class="section-title">OUR SERVICES</h2>
+
+    <h2 class="section-title">
+      OUR SERVICES
+    </h2>
+
     <div class="services-grid">
-      <div class="service"><div class="sicon">🚢</div><h3>Import Services</h3><p>Reliable sourcing and import services from China and other markets.</p></div>
-      <div class="service"><div class="sicon">🚘</div><h3>Vehicle Supply</h3><p>New and used vehicles, spare parts and accessories.</p></div>
-      <div class="service"><div class="sicon">🏗️</div><h3>Construction Supply</h3><p>Construction materials, tools, steel, cement and electrical products.</p></div>
+
+      <div class="service">
+
+        <div class="sicon">🚢</div>
+
+        <h3>
+          Import Services
+        </h3>
+
+        <p>
+          Reliable sourcing and import services from China and other markets.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="sicon">🚘</div>
+
+        <h3>
+          Vehicle Supply
+        </h3>
+
+        <p>
+          New and used vehicles, spare parts and accessories.
+        </p>
+
+      </div>
+
+
+      <div class="service">
+
+        <div class="sicon">🏗️</div>
+
+        <h3>
+          Construction Supply
+        </h3>
+
+        <p>
+          Construction materials, tools, steel, cement and electrical products.
+        </p>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- GALLERY -->
 <section class="section" id="gallery">
+
   <div class="container">
-    <h2 class="section-title">GALLERY</h2>
+
+    <h2 class="section-title">
+      GALLERY
+    </h2>
+
     <div class="products-grid">
-      <div class="product-card cars"><div class="product-head"><div class="picon">🚗</div><h3>VEHICLES</h3></div></div>
-      <div class="product-card construction"><div class="product-head"><div class="picon">🏭</div><h3>IMPORT &amp; LOGISTICS</h3></div></div>
+
+      <div class="product-card cars">
+
+        <div class="product-head">
+
+          <div class="picon">
+            🚗
+          </div>
+
+          <h3>
+            VEHICLES
+          </h3>
+
+        </div>
+
+      </div>
+
+
+      <div class="product-card construction">
+
+        <div class="product-head">
+
+          <div class="picon">
+            🏭
+          </div>
+
+          <h3>
+            IMPORT &amp; LOGISTICS
+          </h3>
+
+        </div>
+
+      </div>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
+
   <div class="container">
-    <h2 class="section-title">CONTACT US</h2>
+
+    <h2 class="section-title">
+      CONTACT US
+    </h2>
+
     <div class="contact-grid">
+
+
       <div class="contact-box">
-        <h3>FEYA IMPORT &amp; TRADING</h3>
-        <div class="contact-line">📞 0915044161</div>
-        <div class="contact-line">🟢 WhatsApp: 0915044161</div>
-        <div class="contact-line">📍 Finfinne, Ethiopia 🇪🇹</div>
-        <div class="contact-line">✉️ feyaimporttrading@gmail.com</div>
+
+        <h3>
+          FEYA IMPORT &amp; TRADING
+        </h3>
+
+        <div class="contact-line">
+          📞 0915044161
+        </div>
+
+        <div class="contact-line">
+          🟢 WhatsApp: 0915044161
+        </div>
+
+        <div class="contact-line">
+          📍 Finfinne, Ethiopia 🇪🇹
+        </div>
+
+        <div class="contact-line">
+          ✉️ feyaimporttrading@gmail.com
+        </div>
+
       </div>
+
+
       <div class="contact-box">
-        <h3>GET IN TOUCH</h3>
-        <p>For cars, spare parts, construction materials and import services, contact us today.</p>
-        <a class="btn" href="https://wa.me/251915044161" target="_blank">MESSAGE ON WHATSAPP →</a>
+
+        <h3>
+          GET IN TOUCH
+        </h3>
+
+        <p>
+          For cars, spare parts, construction materials and import services,
+          contact us today.
+        </p>
+
+        <a
+          class="btn"
+          href="https://wa.me/251915044161"
+          target="_blank"
+          rel="noopener">
+          MESSAGE ON WHATSAPP →
+        </a>
+
       </div>
+
     </div>
+
   </div>
+
 </section>
+
 
 <!-- FOOTER -->
 <footer>
+
   <div class="container footer-main">
+
     <div class="footer-grid">
 
+
       <div class="footer-col">
+
         <div class="footer-brand">
-          <div class="mini-logo">🏢🚙</div>
-          <div><h3>FEYA</h3><p>IMPORT &amp; TRADING</p></div>
+
+          <div class="mini-logo">
+            🏢🚙
+          </div>
+
+          <div>
+            <h3>FEYA</h3>
+            <p>IMPORT &amp; TRADING</p>
+          </div>
+
         </div>
+
         <p class="footer-about">
           የፌያ ኢምፖርት እና ትሬዲንግ አስመጪና አከፋፋይ ድርጅት።
           ጥራት፣ እምነት እና እሴት ለደንበኞቻችን።
         </p>
+
       </div>
 
+
       <div class="footer-col">
-        <h4>QUICK LINKS</h4>
+
+        <h4>
+          QUICK LINKS
+        </h4>
+
         <ul>
           <li><a href="#home">Home</a></li>
           <li><a href="#about">About Us</a></li>
@@ -485,10 +1567,16 @@ footer{background:#111;color:#fff;margin-top:10px}
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact Us</a></li>
         </ul>
+
       </div>
 
+
       <div class="footer-col">
-        <h4>OUR PRODUCTS</h4>
+
+        <h4>
+          OUR PRODUCTS
+        </h4>
+
         <ul>
           <li>Cars</li>
           <li>Car Spare Parts</li>
@@ -497,37 +1585,194 @@ footer{background:#111;color:#fff;margin-top:10px}
           <li>Tools &amp; Accessories</li>
           <li>And More</li>
         </ul>
+
       </div>
 
+
       <div class="footer-col">
-        <h4>CONTACT US</h4>
+
+        <h4>
+          CONTACT US
+        </h4>
+
         <ul>
           <li>📞 0915044161</li>
           <li>🟢 WhatsApp</li>
           <li>📍 Finfinne, Ethiopia 🇪🇹</li>
           <li>✉️ feyaimporttrading@gmail.com</li>
         </ul>
+
       </div>
 
     </div>
+
   </div>
+
 
   <div class="footer-bottom">
-    <div class="container" style="display:flex;justify-content:space-between;gap:15px">
-      <span>© 2024 FEYA IMPORT &amp; TRADING. All Rights Reserved.</span>
-      <span>Designed with ❤️ for Quality &amp; Trust</span>
+
+    <div
+      class="container"
+      style="display:flex;justify-content:space-between;gap:15px">
+
+      <span>
+        © 2026 FEYA IMPORT &amp; TRADING. All Rights Reserved.
+      </span>
+
+      <span>
+        Designed with ❤️ for Quality &amp; Trust
+      </span>
+
     </div>
+
   </div>
+
 </footer>
 
+
+<!-- PWA INSTALL BUTTON -->
+<button
+  id="installBtn"
+  class="btn"
+  type="button"
+  aria-label="Install FEYA Import App">
+
+  📲 INSTALL APP
+
+</button>
+
+
 <script>
+
+/* MOBILE MENU */
 function toggleMenu(){
-  document.getElementById('nav').classList.toggle('open');
+
+  document
+    .getElementById('nav')
+    .classList
+    .toggle('open');
+
 }
-document.querySelectorAll('#nav a').forEach(a=>{
-  a.addEventListener('click',()=>document.getElementById('nav').classList.remove('open'));
-});
+
+
+/* CLOSE MOBILE MENU */
+document
+  .querySelectorAll('#nav a')
+  .forEach(a => {
+
+    a.addEventListener('click', () => {
+
+      document
+        .getElementById('nav')
+        .classList
+        .remove('open');
+
+    });
+
+  });
+
+
+/* PWA INSTALL */
+let deferredPrompt = null;
+
+const installBtn =
+  document.getElementById("installBtn");
+
+
+window.addEventListener(
+  "beforeinstallprompt",
+  (event) => {
+
+    event.preventDefault();
+
+    deferredPrompt = event;
+
+    installBtn.style.display =
+      "inline-flex";
+
+  }
+);
+
+
+installBtn.addEventListener(
+  "click",
+  async () => {
+
+    if (!deferredPrompt) {
+      return;
+    }
+
+    deferredPrompt.prompt();
+
+    const { outcome } =
+      await deferredPrompt.userChoice;
+
+    console.log(
+      "PWA install result:",
+      outcome
+    );
+
+    deferredPrompt = null;
+
+    installBtn.style.display =
+      "none";
+
+  }
+);
+
+
+/* APP INSTALLED */
+window.addEventListener(
+  "appinstalled",
+  () => {
+
+    console.log(
+      "FEYA Import PWA installed successfully."
+    );
+
+    installBtn.style.display =
+      "none";
+
+  }
+);
+
+
+/* SERVICE WORKER */
+if ("serviceWorker" in navigator){
+
+  window.addEventListener(
+    "load",
+    () => {
+
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then(
+          registration => {
+
+            console.log(
+              "FEYA Service Worker registered:",
+              registration.scope
+            );
+
+          }
+        )
+        .catch(
+          error => {
+
+            console.error(
+              "Service Worker registration failed:",
+              error
+            );
+
+          }
+        );
+
+    }
+  );
+
+}
+
 </script>
 
 </body>
-</html>
+  </html>
